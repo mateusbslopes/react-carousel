@@ -10,8 +10,27 @@ let App = () => {
       value={value}
       setValue={setValue}
     >
-      <div>Test</div>
-      <div>Test 2</div>
+      <div
+        style={{
+          backgroundColor: "green"
+        }}
+      >
+        Test
+      </div>
+      <div
+        style={{
+          backgroundColor: "red"
+        }}
+      >
+        Test 2
+      </div>
+      <div
+        style={{
+          backgroundColor: "blue"
+        }}
+      >
+        Test 3
+      </div>
     </ReactCarousel>
   </div>)
 }
