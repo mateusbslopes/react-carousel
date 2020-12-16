@@ -6,7 +6,7 @@
   "main": "dist/main.js",
   "scripts": {
     "dev": "webpack --mode development",
-    "start": "webpack serve --open chrome"
+    "start": "webpack serve --host=0.0.0.0 --disable-host-check --useLocalIp --open chrome"
   },
   "dependencies": {
     "@emotion/react": "^11.1.2",
