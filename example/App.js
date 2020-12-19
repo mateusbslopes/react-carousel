@@ -24,22 +24,12 @@ let App = () => {
         >
           Test
         </div>
-        <div
-          className="app-item"
-          style={{
-            backgroundColor: "red",
-          }}
-        >
-          Test 2
-        </div>
-        <div
-          className="app-item"
-          style={{
-            backgroundColor: "blue",
-          }}
-        >
-          Test 3
-        </div>
+        <img src="https://static.wikia.nocookie.net/avatar/images/a/ae/Aang_at_Jasmine_Dragon.png/revision/latest?cb=20130612174003"/>
+        <img src="https://media1.giphy.com/media/10fS0TJxfFRDLW/giphy.gif" />
+        <video width="320" height="240" controls>
+          <source src="file:///C:/Users/mateu/Downloads/The%20Story%20of%20Avatar%20Wan%20%F0%9F%94%A5%20Origins%20of%20the%20First%20Avatar%20_%20LOK.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </ReactCarousel>
     </div>
   );

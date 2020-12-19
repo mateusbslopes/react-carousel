@@ -13,12 +13,15 @@ export default ({
   const viewX = createRef(null);
 
   const ref = createRef();
-  const [value, setValue] = useState("");
 
   useEffect(() => {
     ref.current.addEventListener("touchstart", handleTouchStart)
     ref.current.addEventListener("touchmove", handleTouchMove)
     ref.current.addEventListener("touchend", handleTouchEnd)
+
+    ref.current.addEventListener("dragstart", handleDragStart)
+    ref.current.addEventListener("drag", handleDragMove)
+    ref.current.addEventListener("dragend", handleDragEnd)
 
     return () => {
       // remover event listener
@@ -29,8 +32,9 @@ export default ({
     evt.touches || evt.originalEvent.touches
 
   const handleDragStart = (evt) => {
-    setX(evt.clientX);
-    setViewX(evt.clientX);
+    let currentX = Math.trunc(evt.clientX);
+    x.current = currentX;
+    viewX.current = currentX;
   }
 
   const handleTouchStart = (evt) => {
@@ -40,8 +44,10 @@ export default ({
   }
 
   const handleDragMove = (evt) => {
-    if(evt.clientX !== viewX) {
-      setViewValue(viewX - evt.clientX);
+    console.log("move");
+    if(evt.clientX !== viewX.current) {
+      setViewValue(x.current - evt.clientX);
+      viewX.current = evt.clientX;
     }
   }
 
@@ -54,14 +60,13 @@ export default ({
   }
 
   const handleDragEnd = (evt) => {
-    if(evt.clientX < x)
+    if(evt.clientX < x.current)
       increaseValue();
     else
       decreaseValue();
   }
 
-  const handleTouchEnd = (evt) => {
-    console.log("end", viewX.current, x.current);
+  const handleTouchEnd = () => {
     if(viewX.current < x.current)
       increaseValue();
     else
@@ -76,14 +81,8 @@ export default ({
         width: "100%"
       }}
       ref={ref}
-      onDragStart={handleDragStart}
-      onDragEnd={handleDragEnd}
-      onDrag={handleDragMove}
     >
       {children}
-      <div style={{fontSize: 200}}>
-        {value}
-      </div>
     </div>
   )
 }
