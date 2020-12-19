@@ -10,20 +10,26 @@ export const ReactCarousel = ({
   children
 }) => {
   const [viewValue, setViewValue] = useState(0)
+  let localValue = createRef();
+
   const firstItemRef = createRef();
   const carousel = createRef();
 
+
   const increaseValue = () =>{
-    if(value !== children.length - 1){
-      setValue(value + 1)
+    console.log(localValue.current)
+    if(localValue.current !== children.length - 1){
+      setValue(localValue.current + 1)
+      localValue.current += 1
     } else {
       normalizeIncreaseMovimentation()
     }
   }
 
   const decreaseValue = () => {
-    if (value !== 0){
-      setValue(value - 1)
+    if (localValue.current !== 0){
+      setValue(localValue.current - 1)
+      localValue.current -= 1
     } else {
       normalizeIncreaseMovimentation()
     }
@@ -47,6 +53,10 @@ export const ReactCarousel = ({
   useEffect(() => {
     moveCarousel(`${100 * value * -1}%`, ".5s");
   }, [value])
+
+  useEffect(() => {
+    localValue.current = value;
+  }, [])
 
   return <div css={style} ref={carousel}>
     <button
