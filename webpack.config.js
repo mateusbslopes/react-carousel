@@ -6,6 +6,15 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
+  devServer: {
+    contentBase: [
+      path.resolve(__dirname, 'dist')
+    ],
+    open: true,
+    port: 3000,
+    host: '0.0.0.0',
+    useLocalIp: true
+  },
   module: {
     rules: [
       {
@@ -27,7 +36,15 @@ module.exports = {
             ]
           }
         }]
-      }
+      },
+      {
+        test: /\.(jpg|gif|mp4)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+          },
+        ],
+      },
     ]
   }
 }
