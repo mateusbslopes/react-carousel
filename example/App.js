@@ -20,7 +20,6 @@ let App = () => {
         value={value}
         setValue={setValue}
         navigation={{
-          /* arrows: false, */
           dots: true
         }}
       >

@@ -8,9 +8,7 @@ export const ReactCarousel = ({
   value = 0,
   setValue,
   children,
-  showArrows,
-  leftArrow,
-  rightArrow
+  navigation,
 }) => {
   const [viewValue, setViewValue] = useState(0)
 
@@ -50,29 +48,32 @@ export const ReactCarousel = ({
   }, [value])
 
   return (
-    <div css={style} ref={carousel}>
-      {children.map((child, index) => (
-        <div
-          className={`item ${index === 0 ? "first-item" : ""}`}
-          ref={index === 0 ? firstItemRef : null}
-        >
-          <Item
-            increaseValue={increaseValue}
-            decreaseValue={decreaseValue}
-            setViewValue={setViewValue}
+    <div css={style} >
+      <div ref={carousel} className="carousel">
+        {children.map((child, index) => (
+          <div
+            className={`item ${index === 0 ? "first-item" : ""}`}
+            ref={index === 0 ? firstItemRef : null}
           >
-            {child}
-          </Item>
-        </div>
-      ))}
-      {dots && (
-        <div>
-          {children.map((_, index) => (
-            <div className={`dot ${index === value ? 'active' : ""}`}>
-            </div>
-          ))}
-        </div>
-      )}
+            <Item
+              increaseValue={increaseValue}
+              decreaseValue={decreaseValue}
+              setViewValue={setViewValue}
+            >
+              {child}
+            </Item>
+          </div>
+        ))}
+      </div>
+      {navigation?.dots && (
+          <div className="dots-area">
+            {children.map((_, index) => (
+              <button
+                onClick={() => setValue(index)}
+                className={`dot ${index === value ? 'active' : ""}`} />
+            ))}
+          </div>
+        )}
     </div>
   )
 }
