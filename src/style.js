@@ -1,5 +1,4 @@
 export default `
-
   .carousel {
     display: flex;
     overflow: hidden;
@@ -42,4 +41,4 @@ export default `
     background-color: blue;
   }
 
-`
+`;
