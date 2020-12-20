@@ -27,9 +27,9 @@ export const ReactCarousel = ({
   }
 
   const moveCarousel = (value, duration) => {
-    const firstItem = firstItemRef.current;
-    firstItem.style.transitionDuration = duration;
-    firstItem.style.marginLeft = value;
+    const firstItemStyle = firstItemRef.current.style;
+    firstItemStyle.transitionDuration = duration;
+    firstItemStyle.marginLeft = value;
   }
 
   const canMove = () => {
@@ -43,7 +43,6 @@ export const ReactCarousel = ({
   }, [viewValue])
 
   useEffect(() => {
-    console.log("teste", value);
     moveCarousel(`${100 * value * -1}%`, ".5s");
   }, [value])
 
