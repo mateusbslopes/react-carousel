@@ -7,10 +7,9 @@ import style from "./style";
 
 //import Image from "";
 
-const GIF_URL = "./images/landscape.gif";
-const IMAGE_URL = "./images/pexels-paul-ijsendoorn-33041.jpg";
-const VIDEO_URL =
-  "file:///C:/Users/mateu/Downloads/The%20Story%20of%20Avatar%20Wan%20%F0%9F%94%A5%20Origins%20of%20the%20First%20Avatar%20_%20LOK.mp4";
+const GIF_URL = "./images/landscape-gif.gif";
+const IMAGE_URL = "./images/landscape-image.jpg";
+const VIDEO_URL = "./images/landscape-video.mp4"
 
 let App = () => {
   const [value, setValue] = useState(0);
@@ -29,6 +28,10 @@ let App = () => {
         </div>
         <img src={IMAGE_URL} width="100%" />
         <img src={GIF_URL} width="100%" />
+        <video width="100%" controls>
+          <source src={VIDEO_URL} type="video/mp4" />
+          Your browser does not support video.
+        </video>
       </ReactCarousel>
     </div>
   );
