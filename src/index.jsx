@@ -49,20 +49,30 @@ export const ReactCarousel = ({
     moveCarousel(`${100 * value * -1}%`, ".5s");
   }, [value])
 
-  return <div css={style} ref={carousel}>
-    {children.map((child, index) => (
-      <div
-        className={`item ${index === 0 && "first-item"}`}
-        ref={index === 0 ? firstItemRef : null}
-      >
-        <Item
-          increaseValue={increaseValue}
-          decreaseValue={decreaseValue}
-          setViewValue={setViewValue}
+  return (
+    <div css={style} ref={carousel}>
+      {children.map((child, index) => (
+        <div
+          className={`item ${index === 0 ? "first-item" : ""}`}
+          ref={index === 0 ? firstItemRef : null}
         >
-          {child}
-        </Item>
-      </div>
-    ))}
-  </div>
+          <Item
+            increaseValue={increaseValue}
+            decreaseValue={decreaseValue}
+            setViewValue={setViewValue}
+          >
+            {child}
+          </Item>
+        </div>
+      ))}
+      {dots && (
+        <div>
+          {children.map((_, index) => (
+            <div className={`dot ${index === value ? 'active' : ""}`}>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  )
 }

@@ -2,8 +2,15 @@ export default `
   width: 70%;
   margin: auto;
 
-  .app-item {
+  .text-item {
+    height: 100%;
+    background-color: black
+  }
+
+  .text-item-content {
     font-size: 40px;
-    align-items: center;
+    color: white;
+    margin: auto;
+    width: 50%;
   }
 `
