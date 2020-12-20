@@ -23,6 +23,7 @@ export default `
   .dots-area {
     margin: auto;
     width: fit-content;
+    margin-top: 10px;
   }
 
   .dot {
