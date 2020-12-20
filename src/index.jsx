@@ -50,27 +50,6 @@ export const ReactCarousel = ({
   }, [value])
 
   return <div css={style} ref={carousel}>
-    <button
-      className="arrow-area left-arrow-area"
-      onClick={decreaseValue}
-    >
-      {leftArrow || (
-        <div className="default-arrow">
-          {"<"}
-        </div>
-      )}
-    </button>
-    <button
-      className="arrow-area right-arrow-area"
-      onClick={increaseValue}
-    >
-      {rightArrow || (
-        <div className="default-arrow">
-          {">"}
-        </div>
-      )}
-    </button>
-
     {children.map((child, index) => (
       <div
         className={`item ${index === 0 && "first-item"}`}
