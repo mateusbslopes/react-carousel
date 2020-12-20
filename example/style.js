@@ -4,7 +4,7 @@ export default `
 
   .text-item {
     height: 100%;
-    background-color: black
+    background-color: black;
   }
 
   .text-item-content {

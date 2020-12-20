@@ -6,9 +6,10 @@
   "main": "dist/main.js",
   "scripts": {
     "dev": "webpack --mode development",
-    "start": "webpack serve --host=0.0.0.0 --disable-host-check --useLocalIp --open chrome"
+    "start": "webpack --config webpack.config.js"
   },
   "dependencies": {
+    "@emotion/babel-preset-css-prop": "^11.0.0",
     "@emotion/react": "^11.1.2",
     "@emotion/styled": "^11.0.0",
     "react": "^17.0.1",
@@ -19,6 +20,7 @@
     "@babel/preset-env": "^7.12.10",
     "@babel/preset-react": "^7.12.10",
     "@emotion/babel-plugin": "^11.1.2",
+    "@emotion/css": "^11.0.0",
     "babel-loader": "^8.2.2",
     "copy-webpack-plugin": "^7.0.0",
     "html-webpack-plugin": "^4.5.0",

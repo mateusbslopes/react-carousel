@@ -1,7 +1,4 @@
-/** @jsx jsx */
-import { jsx } from "@emotion/react";
-import { useState } from "react";
-import { render } from "react-dom";
+import React, { useState } from "react";
 import { ReactCarousel } from "../src/index.jsx";
 import style from "./style";
 
@@ -9,9 +6,9 @@ import style from "./style";
 
 const GIF_URL = "./images/landscape-gif.gif";
 const IMAGE_URL = "./images/landscape-image.jpg";
-const VIDEO_URL = "./images/landscape-video.mp4"
+const VIDEO_URL = "./images/landscape-video.mp4";
 
-let App = () => {
+export default () => {
   const [value, setValue] = useState(0);
 
   return (
@@ -36,5 +33,3 @@ let App = () => {
     </div>
   );
 };
-
-render(<App />, document.getElementById("root"));

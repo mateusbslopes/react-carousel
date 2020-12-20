@@ -1,31 +1,33 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
-
 const path = require("path");
 
-const IMAGES = path.resolve(__dirname, "dist", "images");
-
 module.exports = {
-  entry: path.resolve(__dirname, "example", "App.js"),
+  entry: path.resolve(__dirname, 'example', 'index.js'),
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
+  },
   module: {
     rules: [
       {
         test: [/\.js$/, /\.jsx$/],
+        include: [
+          path.resolve(__dirname, 'src'),
+          path.resolve(__dirname, 'example')
+        ],
         exclude: [/node_modules/],
-        use: ["babel-loader"]
+        use: [{
+          loader: 'babel-loader',
+          options: {
+            presets: [
+              ['@babel/preset-env', {
+                "targets": "defaults"
+              }],
+              '@babel/preset-react',
+              '@emotion/babel-preset-css-prop'
+            ]
+          }
+        }]
       }
     ]
-  },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "example", "index.html")
-    }),
-    new CopyPlugin({
-      patterns: [
-        {
-          from: path.resolve(__dirname, "example", "images"),
-          to: path.resolve(__dirname, "dist", "images"),  },
-      ],
-    }),
-  ]
-};
+  }
+}
