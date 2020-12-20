@@ -17,12 +17,9 @@ export const ReactCarousel = ({
 
 
   const increaseValue = () =>{
-    console.log(localValue.current)
     if(localValue.current !== children.length - 1){
       setValue(localValue.current + 1)
       localValue.current += 1
-    } else {
-      normalizeIncreaseMovimentation()
     }
   }
 
@@ -30,24 +27,32 @@ export const ReactCarousel = ({
     if (localValue.current !== 0){
       setValue(localValue.current - 1)
       localValue.current -= 1
-    } else {
-      normalizeIncreaseMovimentation()
     }
   }
 
   const moveCarousel = (value, duration) => {
     const firstItem = firstItemRef.current;
+    if (!firstItem) return;
     firstItem.style.transitionDuration = duration;
     firstItem.style.marginLeft = value;
   }
 
+  const nomalizeDecreaseMovimentation = () => {
+    moveCarousel(`${100 * value}%`, ".5");
+  }
+
   const normalizeIncreaseMovimentation = () => {
-    console.log(firstItemRef.current);
     moveCarousel(`${100 * value * -1}%`, ".5");
   }
 
+  const canMove = () => {
+    return (viewValue < 0 && value !== 0) 
+            || (viewValue > 0 && value !== children.length - 1);
+  }
+
   useEffect(() => {
-    moveCarousel(`${((carousel.current.offsetWidth * value) + viewValue) * -1}px`, "0s");
+    if(canMove(viewValue))
+      moveCarousel(`${((carousel.current.offsetWidth * value) + viewValue) * -1}px`, "0s");
   }, [viewValue])
 
   useEffect(() => {

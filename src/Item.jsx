@@ -44,8 +44,7 @@ export default ({
   }
 
   const handleDragMove = (evt) => {
-    console.log("move");
-    if(evt.clientX !== viewX.current) {
+    if(evt.clientX !== viewX.current && evt.clientX) {
       setViewValue(x.current - evt.clientX);
       viewX.current = evt.clientX;
     }
