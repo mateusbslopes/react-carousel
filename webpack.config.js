@@ -3,13 +3,10 @@ const CopyPlugin = require("copy-webpack-plugin");
 
 const path = require("path");
 
-const IMAGES_PATH = path.resolve(__dirname, "dist");
+const IMAGES = path.resolve(__dirname, "dist", "images");
 
 module.exports = {
   entry: path.resolve(__dirname, "example", "App.js"),
-  output: {
-    publicPath: IMAGES_PATH,
-  },
   module: {
     rules: [
       {
@@ -21,7 +18,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, "dist", "index.html")
+      template: path.resolve(__dirname, "example", "index.html")
     }),
     new CopyPlugin({
       patterns: [
