@@ -7,7 +7,10 @@ import style from "./style";
 export const ReactCarousel = ({
   value = 0,
   setValue,
-  children
+  children,
+  showArrows,
+  leftArrow,
+  rightArrow
 }) => {
   const [viewValue, setViewValue] = useState(0)
 
@@ -48,16 +51,24 @@ export const ReactCarousel = ({
 
   return <div css={style} ref={carousel}>
     <button
-      className="arrow arrow-left"
+      className="arrow-area left-arrow-area"
       onClick={decreaseValue}
     >
-      {"<"}
+      {leftArrow || (
+        <div className="default-arrow">
+          {"<"}
+        </div>
+      )}
     </button>
     <button
-      className="arrow arrow-right"
+      className="arrow-area right-arrow-area"
       onClick={increaseValue}
     >
-      {">"}
+      {rightArrow || (
+        <div className="default-arrow">
+          {">"}
+        </div>
+      )}
     </button>
 
     {children.map((child, index) => (

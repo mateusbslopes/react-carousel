@@ -15,20 +15,36 @@ export default `
     transition: margin-left .5s linear;
   }
 
-  .arrow {
-    background: rgba(176, 176, 176, 0.3);
+  .arrow-area {
+    background: none;
+    color: inherit;
     border: none;
-    font-style: bold;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    height: 100%;
   }
 
-  .arrow-left {
+  .default-arrow {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+  }
+
+  .left-arrow-area {
     position: absolute;
     left: 0px;
   }
 
-  .arrow-right {
+  .right-arrow-area {
     position: absolute;
     right: 0px;
   }
 
+  .item-content {
+    flex: 1;
+  }
 `

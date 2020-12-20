@@ -59,9 +59,6 @@ export default ({
     <div
       draggable
       class="item-content"
-      style={{
-        width: "100%"
-      }}
       ref={ref}
       onTouchMove={handleTouchMove}
       onTouchStart={handleTouchStart}
