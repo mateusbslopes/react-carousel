@@ -12,7 +12,8 @@ let App = () => {
     <div
       css={style}
       style={{
-        width: "100%"
+        width: "70%",
+        margin: "auto"
       }}
     >
       <ReactCarousel value={value} setValue={setValue}>
@@ -31,6 +32,10 @@ let App = () => {
           Your browser does not support the video tag.
         </video>
       </ReactCarousel>
+      <button onClick={() => setValue(0)}>1</button>
+      <button onClick={() => setValue(1)}>2</button>
+      <button onClick={() => setValue(2)}>3</button>
+      <button onClick={() => setValue(3)}>4</button>
     </div>
   );
 };
