@@ -1,6 +1,6 @@
 # react-carousel
 
-A React carousel develop for the Scandiweb's React developer test
+A React carousel develop for the Scandiweb's React [developer test](./TEST_DESCRIPTION.md)
 
 ## Table of content
 - Usage
