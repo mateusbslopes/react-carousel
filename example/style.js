@@ -10,8 +10,6 @@ export default `
 
   .carousel {
     margin-top: 10px;
-    width: 500px;
-    margin: auto;
   }
 
   .text-item {
@@ -21,8 +19,9 @@ export default `
 
   .text-item-content {
     font-size: 20px;
-    color: white;
     margin: auto;
+    text-align: center;
+    color: white;
     width: 50%;
   }
 `;

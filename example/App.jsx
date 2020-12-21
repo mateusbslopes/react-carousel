@@ -6,9 +6,9 @@ export default () => {
   return (
     <div css={style}>
       <div className="content">
-        <Carousel />
-        <Carousel />
-        <Carousel />
+        <div className="carousel"><Carousel /></div>
+        <div className="carousel"><Carousel /></div>
+        <div className="carousel"><Carousel /></div>
       </div>
     </div>
   );
