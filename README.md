@@ -34,8 +34,8 @@ The project is not released on npm so you can use only on the example page for n
 
 In order to run the example page locally on you computer (assuming that you already have [yarn](https://classic.yarnpkg.com/en/docs/install/) and [node](https://nodejs.org/en/download/)):
 
-- On the root folder to install all the dependencies run:
+- On the root folder run:
 `yarn`
-- And to run the server:
+- And to start the server:
 `yarn serve`
 
