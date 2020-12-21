@@ -1,6 +1,18 @@
 export default `
-  width: 70%;
+  width: 100%;
   margin: auto;
+
+  .content {
+    width: 80%;
+    background-color: white;
+    margin: auto;
+  }
+
+  .carousel {
+    margin-top: 10px;
+    width: 500px;
+    margin: auto;
+  }
 
   .text-item {
     height: 100%;
@@ -8,7 +20,7 @@ export default `
   }
 
   .text-item-content {
-    font-size: 40px;
+    font-size: 20px;
     color: white;
     margin: auto;
     width: 50%;
