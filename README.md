@@ -27,7 +27,7 @@ Navigation configures the non slide navigation aspects. It has the following mod
 ```
 
 Where:
- - dots: Configuration to show the the dots navigation or not;
+ - dots: Configuration to show the dots navigation or not;
 
 ### Running
 The project is not released on npm so you can use only on the example page for now.
