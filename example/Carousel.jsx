@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ReactCarousel } from "../src/index.jsx";
+import ReactCarousel from "../src/index.jsx";
 
 import IMAGE from "./images/landscape-image.jpg";
 import GIF from "./images/landscape-gif.gif";
