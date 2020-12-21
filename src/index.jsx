@@ -1,3 +1,3 @@
-import ReactCarousel from "./ReactCarousel";
+import ReactCarousel from "./ReactCarousel.jsx";
 
 export default ReactCarousel;

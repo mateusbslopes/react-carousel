@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from "react";
 import Item from "./Item.jsx";
 import style from "./style";
 
-export const ReactCarousel = ({
+export default ({
   value = 0,
   setValue,
   children,
