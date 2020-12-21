@@ -4,7 +4,7 @@ export default ({ children, increaseValue, decreaseValue, setViewValue }) => {
   const [x, setX] = useState(0);
   const [viewX, setViewX] = useState(0);
 
-  const ref = createRef();
+  const itemRef = createRef();
 
   const getTouches = (evt) => evt.touches;
 
@@ -49,7 +49,7 @@ export default ({ children, increaseValue, decreaseValue, setViewValue }) => {
     <div
       draggable
       class="item-content"
-      ref={ref}
+      ref={itemRef}
       onTouchMove={handleTouchMove}
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
