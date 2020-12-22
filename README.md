@@ -42,7 +42,7 @@ In order to run the example page locally on you computer (assuming that you alre
 `yarn serve`
 
 ### Known Issues
-1. Multiple touches does not works correctly when one of the touches is not on the Carousel.
+To see the Known issues go to [repository issues](https://github.com/mateusbslopes/react-carousel/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
 
 ### Roadmap
 There are multiple evolutions to be developed on this project. So to see what will be develop next see the [ROADMAP](./ROADMAP.md) file.
