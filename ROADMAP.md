@@ -1,6 +1,7 @@
 1. Make it infinite scroll
 2. Create tests for project
-3. Add basic arrows when config:
+3. Improve example lighthouse overall score:
+4. Add basic arrows when config:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -8,7 +9,7 @@
   }}
 >...</ReactCarousel>
 ```
-4. Permit custom dots:
+5. Permit custom dots:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -18,7 +19,7 @@
   }}
 >...</ReactCarousel>
 ```
-5. Permit custom arrows:
+6. Permit custom arrows:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -29,4 +30,4 @@
   }}
 >...</ReactCarousel>
 ```
-6. Handle keyboard navigation (accessibility purpose)
+7. Handle keyboard navigation (accessibility purpose)

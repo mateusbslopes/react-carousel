@@ -1,17 +1,13 @@
 {
   "name": "react-carousel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": "Mateus Lopes",
   "license": "Apache-2.0",
-  "main": "dist/main.js",
   "scripts": {
-    "serve": "webpack serve --config webpack.config.js",
-    "start": "webpack --config webpack.config.js"
+    "serve": "webpack serve --config webpack.config.js"
   },
   "dependencies": {
-    "@emotion/babel-preset-css-prop": "^11.0.0",
     "@emotion/react": "^11.1.2",
-    "@emotion/styled": "^11.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },
@@ -25,6 +21,7 @@
     "file-loader": "^6.2.0",
     "webpack": "^5.10.1",
     "webpack-cli": "^4.2.0",
-    "webpack-dev-server": "^3.11.0"
+    "webpack-dev-server": "^3.11.0",
+    "@emotion/babel-preset-css-prop": "^11.0.0"
   }
 }
