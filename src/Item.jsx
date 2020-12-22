@@ -37,12 +37,12 @@ const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
 
   const handleDragEnd = (evt) => {
     if (evt.clientX < x) increaseValue();
-    else decreaseValue();
+    else if(viewX > x) decreaseValue();
   };
 
   const handleTouchEnd = () => {
     if (viewX < x) increaseValue();
-    else decreaseValue();
+    else if(viewX > x) decreaseValue();
   };
 
   return (
