@@ -3,7 +3,7 @@ export default `
   margin: auto;
 
   .content {
-    width: 80%;
+    width: clamp(200px, 100%, 1000px);
     background-color: white;
     margin: auto;
   }
