@@ -1,5 +1,6 @@
 1. Make it infinite scroll
-2. Add basic arrows when config:
+2. Create tests for project
+3. Add basic arrows when config:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -7,7 +8,7 @@
   }}
 >...</ReactCarousel>
 ```
-3. Permit custom dots:
+4. Permit custom dots:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -17,7 +18,7 @@
   }}
 >...</ReactCarousel>
 ```
-4. Permit custom arrows:
+5. Permit custom arrows:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -28,4 +29,4 @@
   }}
 >...</ReactCarousel>
 ```
-5. Handle keyboard navigation (accessibility purpose)
+6. Handle keyboard navigation (accessibility purpose)
