@@ -1,7 +1,5 @@
-1. Handle multiple touches
-  - Be able to move 2 carousels on a touchable device
-2. Make it infinite scroll
-3. Add basic arrows when config:
+1. Make it infinite scroll
+2. Add basic arrows when config:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -9,7 +7,7 @@
   }}
 >...</ReactCarousel>
 ```
-4. Permit custom dots:
+3. Permit custom dots:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -19,7 +17,7 @@
   }}
 >...</ReactCarousel>
 ```
-5. Permit custom arrows:
+4. Permit custom arrows:
 ```jsx
 <ReactCarousel
   navigation={{
@@ -30,4 +28,4 @@
   }}
 >...</ReactCarousel>
 ```
-6. Handle keyboard navigation (accessibility purpose)
+5. Handle keyboard navigation (accessibility purpose)

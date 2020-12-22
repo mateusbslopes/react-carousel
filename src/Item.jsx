@@ -1,8 +1,11 @@
 import React, { createRef, useState } from "react";
+import { TouchHandler } from "./services/TouchHandler";
 
 const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
   const [x, setX] = useState(0);
   const [viewX, setViewX] = useState(0);
+
+  const [elementKey, setElementKey] = useState("");
 
   const itemRef = createRef();
 
@@ -15,7 +18,9 @@ const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
   };
 
   const handleTouchStart = (evt) => {
-    let currentX = Math.trunc(getTouches(evt)[0].clientX);
+    let key = TouchHandler.insertElement();
+    setElementKey(key);
+    let currentX = Math.trunc(getTouches(evt)[TouchHandler.getIndex(key)].clientX);
     setX(currentX);
     setViewX(currentX);
   };
@@ -28,7 +33,7 @@ const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
   };
 
   const handleTouchMove = (evt) => {
-    let currentX = Math.trunc(getTouches(evt)[0].clientX);
+    let currentX = Math.trunc(getTouches(evt)[TouchHandler.getIndex(elementKey)].clientX);
     if (currentX !== viewX) {
       setViewValue(x - currentX);
       setViewX(currentX);
@@ -41,6 +46,7 @@ const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
   };
 
   const handleTouchEnd = () => {
+    TouchHandler.removeElement(elementKey);
     if (viewX < x) increaseValue();
     else if(viewX > x) decreaseValue();
   };

@@ -5,6 +5,7 @@ A React carousel develop for the Scandiweb's React [developer test](./TEST_DESCR
 ## Table of content
 - Usage
 - Running
+- Known Issues
 
 ### Usage
 The component accepts the following params:
@@ -39,3 +40,5 @@ In order to run the example page locally on you computer (assuming that you alre
 - And to start the server:
 `yarn serve`
 
+### Known Issues
+1. Multiple touches does not works correctly when one of the touches is not on the Carousel.
