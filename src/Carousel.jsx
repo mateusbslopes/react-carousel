@@ -2,7 +2,7 @@ import React, { createRef, useEffect, useState } from "react";
 import Item from "./Item.jsx";
 import style from "./style";
 
-export default ({ value = 0, setValue, children, navigation }) => {
+const Carousel = ({ value = 0, setValue, children, navigation }) => {
   const [viewValue, setViewValue] = useState(0);
 
   const firstItemRef = createRef();
@@ -66,3 +66,5 @@ export default ({ value = 0, setValue, children, navigation }) => {
     </div>
   );
 };
+
+export default Carousel;

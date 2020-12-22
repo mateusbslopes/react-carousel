@@ -1,6 +1,6 @@
 import React, { createRef, useState } from "react";
 
-export default ({ children, increaseValue, decreaseValue, setViewValue }) => {
+const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
   const [x, setX] = useState(0);
   const [viewX, setViewX] = useState(0);
 
@@ -61,3 +61,5 @@ export default ({ children, increaseValue, decreaseValue, setViewValue }) => {
     </div>
   );
 };
+
+export default Item;
