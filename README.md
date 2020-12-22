@@ -6,6 +6,7 @@ A React carousel develop for the Scandiweb's React [developer test](./TEST_DESCR
 - Usage
 - Running
 - Known Issues
+- Roadmap
 
 ### Usage
 The component accepts the following params:
@@ -42,3 +43,6 @@ In order to run the example page locally on you computer (assuming that you alre
 
 ### Known Issues
 1. Multiple touches does not works correctly when one of the touches is not on the Carousel.
+
+### Roadmap
+There are multiple evolutions to be developed on this project. So to see what will be develop next see the [ROADMAP](./ROADMAP.md) file.
