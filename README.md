@@ -3,10 +3,10 @@
 A React carousel develop for the Scandiweb's React [developer test](./TEST_DESCRIPTION.md)
 
 ## Table of content
-- Usage
-- Running
-- Known Issues
-- Roadmap
+- [Usage](#usage)
+- [Running](#running)
+- [Known Issues](#known-issues)
+- [Roadmap](#roadmap)
 
 ### Usage
 The component accepts the following params:
