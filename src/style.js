@@ -18,7 +18,6 @@ export default `
 
   .item-content {
     flex: 1;
-    touch-action: pan-x pan-y;
   }
 
   .dots-area {

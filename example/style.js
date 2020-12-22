@@ -1,6 +1,7 @@
 export default `
   width: 100%;
   margin: auto;
+  touch-action: pan-x pan-y;
 
   .content {
     width: clamp(200px, 100%, 1000px);
