@@ -34,15 +34,17 @@ Where:
 ### Running
 The project is not released on npm so you can use only on the example page for now.
 
-In order to run the example page locally on you computer (assuming that you already have [yarn](https://classic.yarnpkg.com/en/docs/install/) and [node](https://nodejs.org/en/download/)):
+In order to run the example page locally on you computer (assuming that you already have [yarn](https://classic.yarnpkg.com/en/docs/install/)^1.22.4 and [node](https://nodejs.org/en/download/)^14.2.0):
 
 - On the root folder run:
 `yarn`
 - And to start the server:
 `yarn serve`
 
+The script should open the browser accessing your local ip on port 3000.
+
 ### Known Issues
-To see the Known issues go to [repository issues](https://github.com/mateusbslopes/react-carousel/issues?q=is%3Aopen+is%3Aissue+label%3Abug)
+To see the Known issues go to [repository issues](https://github.com/mateusbslopes/react-carousel/issues?q=is%3Aopen+is%3Aissue+label%3Abug).
 
 ### Roadmap
 There are multiple evolutions to be developed on this project. So to see what will be develop next see the [ROADMAP](./ROADMAP.md) file.
