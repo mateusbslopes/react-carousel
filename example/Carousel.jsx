@@ -21,7 +21,7 @@ export default () => {
         }}
       >
         <div className="text-item">
-          <div className="text-item-content">Basic html content</div>
+          <div className="text-item-content">Basic text content</div>
         </div>
         <img src={IMAGE} width="100%" />
         <img src={GIF} width="100%" />

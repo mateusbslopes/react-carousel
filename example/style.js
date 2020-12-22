@@ -14,12 +14,14 @@ export default `
   }
 
   .text-item {
+    display: flex;
+    align-items: center;
     height: 100%;
     background-color: black;
   }
 
   .text-item-content {
-    font-size: 20px;
+    font-size: 50px;
     margin: auto;
     text-align: center;
     color: white;
