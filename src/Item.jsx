@@ -13,6 +13,7 @@ const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
 
   const handleDragStart = (evt) => {
     let currentX = Math.trunc(evt.clientX);
+    console.log(currentX);
     setX(currentX);
     setViewX(currentX);
   };
@@ -26,6 +27,7 @@ const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
   };
 
   const handleDragMove = (evt) => {
+    console.log(evt.clientX)
     if (evt.clientX !== viewX && evt.clientX) {
       setViewValue(x - evt.clientX);
       setViewX(evt.clientX);
@@ -40,8 +42,8 @@ const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
     }
   };
 
-  const handleDragEnd = (evt) => {
-    if (evt.clientX < x) increaseValue();
+  const handleDragEnd = () => {
+    if (viewX < x) increaseValue();
     else if(viewX > x) decreaseValue();
   };
 
