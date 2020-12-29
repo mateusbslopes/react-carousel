@@ -40,8 +40,8 @@ const Item = ({ children, increaseValue, decreaseValue, setViewValue }) => {
     }
   };
 
-  const handleDragEnd = (evt) => {
-    if (evt.clientX < x) increaseValue();
+  const handleDragEnd = () => {
+    if (viewX < x) increaseValue();
     else if(viewX > x) decreaseValue();
   };
 
