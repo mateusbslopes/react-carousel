@@ -12,10 +12,6 @@ export default `
     overflow: hidden;
   }
 
-  .first-item {
-    transition: margin-left .5s linear;
-  }
-
   .item-content {
     flex: 1;
   }

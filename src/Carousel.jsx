@@ -5,53 +5,73 @@ import style from "./style";
 const Carousel = ({ value = 0, setValue, children, navigation }) => {
   const [viewValue, setViewValue] = useState(0);
 
-  const firstItemRef = createRef();
+  const currentItemRef = createRef();
   const carousel = createRef();
 
   const increaseValue = () =>
-    value !== children.length - 1 && setValue(value + 1);
+    value !== children.length - 1 ? setValue(value + 1) : setValue(0);
 
-  const decreaseValue = () => value !== 0 && setValue(value - 1);
+  const decreaseValue = () =>
+    value !== 0 ? setValue(value - 1) : setValue(children.length - 1);
 
   const moveCarousel = (value, duration) => {
-    const firstItemStyle = firstItemRef.current.style;
+    const firstItemStyle = currentItemRef.current.style;
     firstItemStyle.transitionDuration = duration;
     firstItemStyle.marginLeft = value;
   };
 
-  const canMove = () =>
-    (viewValue < 0 && value !== 0) ||
-    (viewValue > 0 && value !== children.length - 1);
-
   useEffect(() => {
-    if (canMove(viewValue))
-      moveCarousel(
-        `${(carousel.current.offsetWidth * value + viewValue) * -1}px`,
-        "0s"
-      );
+    moveCarousel(`${(carousel.current.offsetWidth + viewValue) * -1}px`, "0s");
   }, [viewValue]);
 
   useEffect(() => {
-    moveCarousel(`${100 * value * -1}%`, ".5s");
+    moveCarousel(`-100%`, ".5s");
   }, [value]);
+
+  const getPreviousItem = () => {
+    let val = value === 0 ? children.lenght - 1 : value - 1;
+    return (
+      <div className="item">
+        <Item
+          increaseValue={increaseValue}
+          decreaseValue={decreaseValue}
+          setViewValue={setViewValue}
+        >
+          {children[val]}
+        </Item>
+      </div>
+    );
+  };
+
+  const getNextItem = () => {
+    let val = value === children.lenght - 1 ? 0 : value + 1;
+    return (
+      <div className="item">
+        <Item
+          increaseValue={increaseValue}
+          decreaseValue={decreaseValue}
+          setViewValue={setViewValue}
+        >
+          {children[val]}
+        </Item>
+      </div>
+    );
+  };
 
   return (
     <div css={style}>
       <div ref={carousel} className="carousel">
-        {children.map((child, index) => (
-          <div
-            className={`item ${index === 0 ? "first-item" : ""}`}
-            ref={index === 0 ? firstItemRef : null}
+        {getPreviousItem()}
+        <div className="item" ref={currentItemRef}>
+          <Item
+            increaseValue={increaseValue}
+            decreaseValue={decreaseValue}
+            setViewValue={setViewValue}
           >
-            <Item
-              increaseValue={increaseValue}
-              decreaseValue={decreaseValue}
-              setViewValue={setViewValue}
-            >
-              {child}
-            </Item>
-          </div>
-        ))}
+            {children[value]}
+          </Item>
+        </div>
+        {getNextItem()}
       </div>
       {navigation?.dots && (
         <div className="dots-area">
